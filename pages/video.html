@@ -33,6 +33,31 @@
   <link href="../assets/css/nucleo-svg.css" rel="stylesheet" />
   <!-- CSS Files -->
   <link id="pagestyle" href="../assets/css/argon-dashboard.css?v=2.0.4" rel="stylesheet" />
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Font Awesome CSS -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+  <style>
+      /* Custom styles */
+      .video-thumbnail {
+          width: 100%;
+          height: auto;
+      }
+
+      .video-title {
+          margin-top: 10px;
+          font-weight: bold;
+      }
+
+      .video-author {
+          font-size: 0.9rem;
+          color: #6c757d;
+      }
+
+      .video-price {
+          font-size: 0.9rem;
+          color: #007bff;
+      }
+  </style>
 </head>
 
 <body class="g-sidenav-show   bg-gray-100">
@@ -250,28 +275,26 @@
         <div class="col-12">
           <div class="card mb-4 dde">
             <div class="card-header pb-0 ">
-              <h6>My courses</h6>
+              <h6>[Course Name]</h6>
             </div>
             <div class="card-body px-0 pt-0 pb-2">
               <div class="table-responsive p-0">
-                <video controls style="max-width: 100%;">
-                  <source src="path/to/your/video.mp4" type="video/mp4">
-                  Your browser does not support the video tag.
-                </video>
-                
-                <div class="instructor-details" style="margin-top: 20px;">
-                  <img src="path/to/instructor/photo.jpg" alt="Instructor Photo" style="width: 100px; height: auto; border-radius: 50%;">
-                  <h2 style="margin-top: 10px; font-size: 1.5rem;">Godwill Ndi</h2>
-                  <p style="margin-top: 10px; font-size: 1rem;">Instructor Bio Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla condimentum tortor eget nibh cursus feugiat.</p>
-                </div>
-          
-                <div class="course-details" style="margin-top: 20px;">
-                  <h3 style="font-size: 1.25rem;">Course Details</h3>
-                  <ul style="list-style-type: none; padding-left: 0;">
-                    <li><strong>Duration:</strong> 10 hours</li>
-                    <li><strong>Syllabus:</strong> Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
-                    <li><strong>Prerequisites:</strong> Basic knowledge of HTML, CSS, and JavaScript</li>
-                  </ul>
+                              <!-- Main Video Display -->
+                  <div class="container mt-4">
+                    <div class="row">
+                        <!-- Main Video Display -->
+                        <div class="col-md-8">
+                            <div id="video-player">
+                                <!-- Main video player will be displayed here -->
+                            </div>
+                        </div>
+                        <!-- Sidebar with Course Contents -->
+                        <div class="col-md-4">
+                            <div id="course-contents">
+                                <!-- Course contents will be displayed here -->
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 
               </div>
@@ -388,6 +411,126 @@
       Scrollbar.init(document.querySelector('#sidenav-scrollbar'), options);
     }
   </script>
+   <script>
+    // Function to display main video
+    function displayMainVideo(videoUrl) {
+        const videoPlayer = document.getElementById('video-player');
+        videoPlayer.innerHTML = `<video controls src="${videoUrl}" class="w-100"></video>`;
+    }
+
+    // Function to display course contents
+    function displayCourseContents(courseContents) {
+        const courseContentsDiv = document.getElementById('course-contents');
+        let contentHTML = '<h3>Course Contents</h3><ul>';
+        courseContents.forEach(content => {
+            contentHTML += `<li><a href="#" onclick="displayMainVideo('${content.videoUrl}')">${content.title}</a></li>`;
+        });
+        contentHTML += '</ul>';
+        courseContentsDiv.innerHTML = contentHTML;
+    }
+
+    // Sample course data (replace with your actual data)
+    const courses = {
+        "webDevelopment": [
+    {
+        "title": "HTML Basics",
+        "videoUrl": "../assets/vids/Html_basics.mp4"
+    },
+    {
+        "title": "HTML Structure",
+        "videoUrl": "../assets/vids/HTML_structure.mp4"
+    },
+    {
+        "title": "HTML Elements",
+        "videoUrl": "path_to_video"
+    },
+    {
+        "title": "HTML Attributes",
+        "videoUrl": "path_to_video"
+    },
+    {
+        "title": "HTML Forms",
+        "videoUrl": "path_to_video"
+    },
+    {
+        "title": "HTML Tables",
+        "videoUrl": "path_to_video"
+    },
+    {
+        "title": "HTML Links and Anchors",
+        "videoUrl": "path_to_video"
+    },
+    {
+        "title": "HTML Images",
+        "videoUrl": "path_to_video"
+    },
+    {
+        "title": "HTML Lists",
+        "videoUrl": "path_to_video"
+    },
+    {
+        "title": "HTML Semantics",
+        "videoUrl": "path_to_video"
+    },
+    {
+        "title": "HTML Layouts",
+        "videoUrl": "path_to_video"
+    },
+    {
+        "title": "HTML Responsive Design",
+        "videoUrl": "path_to_video"
+    },
+    {
+        "title": "HTML Accessibility",
+        "videoUrl": "path_to_video"
+    },
+    {
+        "title": "HTML Best Practices",
+        "videoUrl": "path_to_video"
+    },
+    {
+        "title": "HTML SEO Optimization",
+        "videoUrl": "path_to_video"
+    },
+    {
+        "title": "HTML Metadata",
+        "videoUrl": "path_to_video"
+    },
+    {
+        "title": "HTML Audio and Video",
+        "videoUrl": "path_to_video"
+    },
+    {
+        "title": "HTML Canvas",
+        "videoUrl": "path_to_video"
+    },
+    {
+        "title": "HTML Web Storage",
+        "videoUrl": "path_to_video"
+    },
+    {
+        "title": "HTML Geolocation",
+        "videoUrl": "path_to_video"
+    }
+
+            // Add more course content objects as needed
+        ],
+        "programming": [
+            {
+                "title": "Introduction to Python",
+                "videoUrl": "path_to_video"
+            },
+            {
+                "title": "JavaScript Fundamentals",
+                "videoUrl": "path_to_video"
+            },
+            // Add more course content objects as needed
+        ]
+    };
+
+    // Display initial course contents
+    displayCourseContents(courses.webDevelopment); // Displaying web development course by default
+</script>
   <!-- Github buttons -->
   <script async defer src="https://buttons.github.io/buttons.js"></script>
   <!-- Control Center for Soft Dashboard: parallax effects, scripts for the example pages etc -->
