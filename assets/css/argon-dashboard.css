@@ -10466,6 +10466,7 @@ fieldset:disabled .btn {
 
 .text-center {
   text-align: center !important;
+  padding: 20px;
 }
 
 .text-decoration-none {
