@@ -7,7 +7,15 @@ Quizzy is a learning management system designed for educational institutions to 
 
 ## Screenshots
 
-![Image](./assets/img/Screenshot%20from%202024-04-10%2010-59-01.png)
+![Image](./assets/img/signup.png)
+![Image](./assets/img/login.png)
+![Image](./assets/img/dashboard.png)
+![Image](./assets/img/course.png)
+![Image](./assets/img/question.png)
+![Image](./assets/img/create_question.png)
+![Image](./assets/img/create_course.png)
+![Image](./assets/img/billing.png)
+![Image](./assets/img/profile.png)
 
 ## Technologies Used
 
