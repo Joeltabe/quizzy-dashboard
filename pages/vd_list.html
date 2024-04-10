@@ -33,6 +33,29 @@
   <link href="../assets/css/nucleo-svg.css" rel="stylesheet" />
   <!-- CSS Files -->
   <link id="pagestyle" href="../assets/css/argon-dashboard.css?v=2.0.4" rel="stylesheet" />
+  
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+  <style>
+    /* Custom styles */
+    .video-thumbnail {
+      width: 100%;
+      height: auto;
+    }
+    .video-title {
+      margin-top: 10px;
+      font-weight: bold;
+    }
+    .video-author {
+      font-size: 0.9rem;
+      color: #6c757d;
+    }
+    .video-price {
+      font-size: 0.9rem;
+      color: #007bff;
+    }
+  </style>
 </head>
 
 <body class="g-sidenav-show   bg-gray-100">
@@ -57,7 +80,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" href="../pages/tables.html">
+            <a class="nav-link " href="../pages/tables.html">
               <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
                 <i class="ni ni-calendar-grid-58 text-warning text-sm opacity-10"></i>
               </div>
@@ -73,7 +96,7 @@
             </a>
           </li>
           <li class="nav-item">
-              <a class="nav-link" href="../pages/questions.html">
+              <a class="nav-link active" href="../pages/questions.html">
                 <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
                   <i class="ni ni-single-copy-04 text-dark text-sm opacity-10"></i>
                 </div>
@@ -96,22 +119,6 @@
                 <span class="nav-link-text ms-1">Add Questions</span>
               </a>
             </li> 
-          <!-- <li class="nav-item">
-            <a class="nav-link " href="../pages/virtual-reality.html">
-              <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
-                <i class="ni ni-app text-info text-sm opacity-10"></i>
-              </div>
-              <span class="nav-link-text ms-1">Virtual Reality</span>
-            </a>
-          </li> -->
-          <!-- <li class="nav-item">
-            <a class="nav-link " href="../pages/rtl.html">
-              <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
-                <i class="ni ni-world-2 text-danger text-sm opacity-10"></i>
-              </div>
-              <span class="nav-link-text ms-1">RTL</span>
-            </a>
-          </li> -->
           <li class="nav-item mt-3">
             <h6 class="ps-4 ms-2 text-uppercase text-xs font-weight-bolder opacity-6">Account pages</h6>
           </li>
@@ -260,202 +267,155 @@
       </div>
     </nav>
     <!-- End Navbar -->
-    <div class="container-fluid py-4">
+    <div class="container-fluid py-4 ">
+      
       <div class="row">
         <div class="col-12">
-          <div class="card mb-4">
-            <div class="card-header pb-0">
-              <h6>Course table</h6>
-            </div>
+          <div class="card mb-4 dde">
             <div class="card-body px-0 pt-0 pb-2">
               <div class="table-responsive p-0">
-                <table class="table align-items-center mb-0">
-                  <thead>
-                    <tr>
-                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Name</th>
-                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Department</th>
-                      <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Status</th>
-                      <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">post date</th>
-                      <th class="text-secondary opacity-7"></th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td>
-                        <div class="d-flex px-2 py-1">
-                          <div>
-                            <img src="../assets/img/c++.jpg" class="avatar avatar-sm me-3" alt="user1">
-                          </div>
-                          <div class="d-flex flex-column justify-content-center">
-                            <h6 class="mb-0 text-sm">Comprehensive C++</h6>
-                            <p class="text-xs text-secondary mb-0">joeltabe3@gmail.com</p>
+                <div class="container mt-4">
+                    <h2 class="mb-4">Web Development Videos</h2>
+                    <div id="web-development-carousel" class="carousel slide mb-5" data-ride="carousel">
+                      <div class="carousel-inner">
+                        <div class="carousel-item active">
+                          <div class="row">
+                            <!-- Static video data for demonstration -->
+                            <div class="col-md-4">
+                                <div class="card">
+                                  <img src="../assets/img/w3c.jpg" class="card-img-top video-thumbnail" alt="Video 1">
+                                  <div class="card-body">
+                                    <h5 class="card-title video-title">Fundamentals of Web design</h5>
+                                    <p class="card-text video-author">Author: Tabe Joel</p>
+                                    <p class="card-text video-price">Price: 2000 cfa</p>
+                                    <!-- Rating stars -->
+                                    <div>
+                                      <i class="fas fa-star"></i>
+                                      <i class="fas fa-star"></i>
+                                      <i class="fas fa-star"></i>
+                                      <i class="fas fa-star"></i>
+                                      <i class="far fa-star"></i>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              
+                            <div class="col-md-4">
+                              <div class="card">
+                                <img src="../assets/img/fundamentals_of_html.jpg" class="card-img-top video-thumbnail" alt="Video 1">
+                                <div class="card-body">
+                                  <h5 class="card-title video-title">Fundamentals of HTML</h5>
+                                  <p class="card-text video-author">Author: Tabe Joel</p>
+                                  <p class="card-text video-price">Price: 2000 cfa</p>
+                                  <!-- Rating stars -->
+                                  <div>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="card">
+                                  <img src="../assets/img/fundamentals_of_css.png" class="card-img-top video-thumbnail" alt="Video 1">
+                                  <div class="card-body">
+                                    <h5 class="card-title video-title">Fundamentals of CSS</h5>
+                                    <p class="card-text video-author">Author: Tabe Joel</p>
+                                    <p class="card-text video-price">Price: 2000 cfa</p>
+                                    <!-- Rating stars -->
+                                    <div>
+                                      <i class="fas fa-star"></i>
+                                      <i class="fas fa-star"></i>
+                                      <i class="fas fa-star"></i>
+                                      <i class="fas fa-star"></i>
+                                      <i class="fas fa-star"></i>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+
+                              <div class="col-md-4">
+                                <div class="card">
+                                  <img src="../assets/img/responsive-design.jpg" class="card-img-top video-thumbnail" alt="Video 1">
+                                  <div class="card-body">
+                                    <h5 class="card-title video-title">Responsive Web design</h5>
+                                    <p class="card-text video-author">Author: Tabe Joel</p>
+                                    <p class="card-text video-price">Price: 3000 cfa</p>
+                                    <!-- Rating stars -->
+                                    <div>
+                                      <i class="fas fa-star"></i>
+                                      <i class="fas fa-star"></i>
+                                      <i class="fas fa-star"></i>
+                                      <i class="far fa-star"></i>
+                                      <i class="far fa-star"></i>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="col-md-4">
+                                <div class="card">
+                                  <img src="../assets/img/wordpress.jpg" class="card-img-top video-thumbnail" alt="Video 1">
+                                  <div class="card-body">
+                                    <h5 class="card-title video-title">wordpress</h5>
+                                    <p class="card-text video-author">Author: Tabe Joel</p>
+                                    <p class="card-text video-price">Price: 9000 cfa</p>
+                                    <!-- Rating stars -->
+                                    <div>
+                                      <i class="fas fa-star"></i>
+                                      <i class="fas fa-star"></i>
+                                      <i class="far fa-star"></i>
+                                      <i class="far fa-star"></i>
+                                      <i class="far fa-star"></i>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="col-md-4">
+                                    <div class="card">
+                                  <img src="../assets/img/responsive-design.jpg" class="card-img-top video-thumbnail" alt="Video 1">
+                                  <div class="card-body">
+                                    <h5 class="card-title video-title">Responsive Web design</h5>
+                                    <p class="card-text video-author">Author: Tabe Joel</p>
+                                    <p class="card-text video-price">Price: 3000 cfa</p>
+                                    <!-- Rating stars -->
+                                    <div>
+                                      <i class="fas fa-star"></i>
+                                      <i class="fas fa-star"></i>
+                                      <i class="fas fa-star"></i>
+                                      <i class="far fa-star"></i>
+                                      <i class="far fa-star"></i>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            <!-- Repeat similar structure for other videos -->
                           </div>
                         </div>
-                      </td>
-                      <td>
-                        <p class="text-xs font-weight-bold mb-0">Software</p>
-                        <p class="text-xs text-secondary mb-0">Engineering</p>
-                      </td>
-                      <td class="align-middle text-center text-sm">
-                        <span class="badge badge-sm bg-gradient-success">Active</span>
-                      </td>
-                      <td class="align-middle text-center">
-                        <span class="text-secondary text-xs font-weight-bold">24/04/8</span>
-                      </td>
-                      <td class="align-middle">
-                        <a href="javascript:;" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
-                          
-                        </a>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>
-                        <div class="d-flex px-2 py-1">
-                          <div>
-                            <img src="../assets/img/Python-logo-notext.svg.png" class="avatar avatar-sm me-3" alt="user1">
-                          </div>
-                          <div class="d-flex flex-column justify-content-center">
-                            <h6 class="mb-0 text-sm">A complete Python Course</h6>
-                            <p class="text-xs text-secondary mb-0">joeltabe3@gmail.com</p>
-                          </div>
-                        </div>
-                      </td>
-                      <td>
-                        <p class="text-xs font-weight-bold mb-0">Software</p>
-                        <p class="text-xs text-secondary mb-0">Engineering</p>
-                      </td>
-                      <td class="align-middle text-center text-sm">
-                        <span class="badge badge-sm bg-gradient-success">Active</span>
-                      </td>
-                      <td class="align-middle text-center">
-                        <span class="text-secondary text-xs font-weight-bold">24/04/8</span>
-                      </td>
-                      <td class="align-middle">
-                        <a href="javascript:;" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
-                          
-                        </a>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>
-                        <div class="d-flex px-2 py-1">
-                          <div>
-                            <img src="../assets/img/React_Logo_SVG.svg.png" class="avatar avatar-sm me-3" alt="user1">
-                          </div>
-                          <div class="d-flex flex-column justify-content-center">
-                            <h6 class="mb-0 text-sm">A Complete React Course</h6>
-                            <p class="text-xs text-secondary mb-0">joeltabe3@gmail.com</p>
-                          </div>
-                        </div>
-                      </td>
-                      <td>
-                        <p class="text-xs font-weight-bold mb-0">Software</p>
-                        <p class="text-xs text-secondary mb-0">Engineering</p>
-                      </td>
-                      <td class="align-middle text-center text-sm">
-                        <span class="badge badge-sm bg-gradient-secondary">Not Active</span>
-                      </td>
-                      <td class="align-middle text-center">
-                        <span class="text-secondary text-xs font-weight-bold">24/04/8</span>
-                      </td>
-                      <td class="align-middle">
-                        <a href="javascript:;" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
-                          
-                        </a>
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
+                        <!-- Add more carousel items as needed -->
+                      </div>
+                      <a class="carousel-control-prev" href="#web-development-carousel" role="button" data-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                      </a>
+                      <a class="carousel-control-next" href="#web-development-carousel" role="button" data-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                      </a>
+                    </div>
+                
+                    <!-- Similar structure for other categories -->
+                  </div>
+                
+                
               </div>
             </div>
           </div>
         </div>
       </div>
-      <div class="row">
-        <div class="col-12">
-          <div class="card mb-4">
-            <div class="card-header pb-0">
-              <h6>My courses</h6>
-            </div>
-            <div class="card-body px-0 pt-0 pb-2">
-              <div class="table-responsive p-0">
-                <table class="table align-items-center justify-content-center mb-0">
-                  <thead>
-                    <tr>
-                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Name</th>
-                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Status</th>
-                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder text-center opacity-7 ps-2">Completion</th>
-                      <th></th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td>
-                        <div class="d-flex px-2">
-                          <div>
-                            <img src="../assets/img/c++.jpg" class="avatar avatar-sm rounded-circle me-2" alt="spotify">
-                          </div>
-                          <div class="my-auto">
-                            <h6 class="mb-0 text-sm">Comprehensive C</h6>
-                          </div>
-                        </div>
-                      </td>
-                      <td>
-                        <span class="text-xs font-weight-bold">working</span>
-                      </td>
-                      <td class="align-middle text-center">
-                        <div class="d-flex align-items-center justify-content-center">
-                          <span class="me-2 text-xs font-weight-bold">60%</span>
-                          <div>
-                            <div class="progress">
-                              <div class="progress-bar bg-gradient-info" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;"></div>
-                            </div>
-                          </div>
-                        </div>
-                      </td>
-                      <td class="align-middle">
-                        <button class="btn btn-link text-secondary mb-0">
-                          <i class="fa fa-ellipsis-v text-xs"></i>
-                        </button>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>
-                        <div class="d-flex px-2">
-                          <div>
-                            <img src="../assets/img/Python-logo-notext.svg.png" class="avatar avatar-sm rounded-circle me-2" alt="spotify">
-                          </div>
-                          <div class="my-auto">
-                            <h6 class="mb-0 text-sm">A complete Python Course</h6>
-                          </div>
-                        </div>
-                      </td>
-                      <td>
-                        <span class="text-xs font-weight-bold">working</span>
-                      </td>
-                      <td class="align-middle text-center">
-                        <div class="d-flex align-items-center justify-content-center">
-                          <span class="me-2 text-xs font-weight-bold">100%</span>
-                          <div>
-                            <div class="progress">
-                              <div class="progress-bar bg-gradient-info" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 100%;"></div>
-                            </div>
-                          </div>
-                        </div>
-                      </td>
-                      <td class="align-middle">
-                        <button class="btn btn-link text-secondary mb-0">
-                          <i class="fa fa-ellipsis-v text-xs"></i>
-                        </button>
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+     
       <footer class="footer pt-3  ">
         <div class="container-fluid">
           <div class="row align-items-center justify-content-lg-between">
@@ -489,6 +449,7 @@
         </div>
       </footer>
     </div>
+    
   </main>
   <div class="fixed-plugin">
     <a class="fixed-plugin-button text-dark position-fixed px-3 py-2">
@@ -547,18 +508,6 @@
             <input class="form-check-input mt-1 ms-auto" type="checkbox" id="dark-version" onclick="darkMode(this)">
           </div>
         </div>
-        <!-- <a class="btn bg-gradient-dark w-100" href="https://www.creative-tim.com/product/argon-dashboard">Free Download</a>
-        <a class="btn btn-outline-dark w-100" href="https://www.creative-tim.com/learning-lab/bootstrap/license/argon-dashboard">View documentation</a> -->
-        <!-- <div class="w-100 text-center">
-          <a class="github-button" href="https://github.com/creativetimofficial/argon-dashboard" data-icon="octicon-star" data-size="large" data-show-count="true" aria-label="Star creativetimofficial/argon-dashboard on GitHub">Star</a>
-          <h6 class="mt-3">Thank you for sharing!</h6>
-          <a href="https://twitter.com/intent/tweet?text=Check%20Argon%20Dashboard%20made%20by%20%40CreativeTim%20%23webdesign%20%23dashboard%20%23bootstrap5&amp;url=https%3A%2F%2Fwww.creative-tim.com%2Fproduct%2Fargon-dashboard" class="btn btn-dark mb-0 me-2" target="_blank">
-            <i class="fab fa-twitter me-1" aria-hidden="true"></i> Tweet
-          </a>
-          <a href="https://www.facebook.com/sharer/sharer.php?u=https://www.creative-tim.com/product/argon-dashboard" class="btn btn-dark mb-0 me-2" target="_blank">
-            <i class="fab fa-facebook-square me-1" aria-hidden="true"></i> Share
-          </a>
-        </div> -->
       </div>
     </div>
   </div>
@@ -567,6 +516,10 @@
   <script src="../assets/js/core/bootstrap.min.js"></script>
   <script src="../assets/js/plugins/perfect-scrollbar.min.js"></script>
   <script src="../assets/js/plugins/smooth-scrollbar.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
   <script>
     var win = navigator.platform.indexOf('Win') > -1;
     if (win && document.querySelector('#sidenav-scrollbar')) {
