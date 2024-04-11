@@ -52,8 +52,17 @@ git clone https://github.com/Joeltabe/quizzy-dashboard.git
 ```bash
 cd Quizzy
 ```
+3. Navigate to the pdf directory:
 
-3. Open `index.html` in your web browser.
+```bash
+cd pdf/pdf.js
+```
+4.  you need to start a local web server as some browsers do not allow opening PDF files using a file:// URL. Run:
+
+```bash
+gulp server
+```
+5. Open `index.html` in your web browser.
 
 ## Contributing
 
