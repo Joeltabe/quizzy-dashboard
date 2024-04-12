@@ -130,7 +130,7 @@
               </div>
             </div>
             <div class="card-body">
-              <form role="form" >
+              <form role="form" id="signup-form" >
                 <div class="mb-3">
                     <input type="text" class="form-control" placeholder="Name" aria-label="Name" name="name">
                 </div>
@@ -204,6 +204,32 @@
   </footer>
   <!-- -------- END FOOTER 3 w/ COMPANY DESCRIPTION WITH LINKS & SOCIAL ICONS & COPYRIGHT ------- -->
   <!--   Core JS Files   -->
+  <script >
+    document.getElementById("signup-form").addEventListener("submit", function(event) {
+  event.preventDefault();
+
+  const formData = new FormData(this);
+
+  fetch("https://quizzy-dxd2.onrender.com/api/users/quizzy/v1/register", {
+      method: "POST",
+      body: formData
+  })
+  .then(response => {
+      if (!response.ok) {
+          throw new Error("Network response was not ok");
+      }
+      return response.json();
+  })
+  .then(data => {
+      // Handle success response
+      console.log(data);
+  })
+  .catch(error => {
+      // Handle error
+      console.error("There was a problem with the form submission:", error);
+  });
+});
+  </script>
   <script src="../assets/js/core/popper.min.js"></script>
   <script src="../assets/js/core/bootstrap.min.js"></script>
   <script src="../assets/js/plugins/perfect-scrollbar.min.js"></script>
