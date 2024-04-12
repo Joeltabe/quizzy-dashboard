@@ -212,6 +212,7 @@
 
   fetch("https://quizzy-dxd2.onrender.com/api/users/quizzy/v1/register", {
       method: "POST",
+      mode: 'cors',
       body: formData
   })
   .then(response => {
