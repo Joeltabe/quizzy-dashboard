@@ -212,15 +212,17 @@
   const username = document.getElementById('username').value;
   const password = document.getElementById('password').value;
 
-  console.log({email, username, password} )
+  const data = JSON.stringify({email, username, password}); 
+  console.log(data)
 
   fetch("https://quizzy-dxd2.onrender.com/api/users/quizzy/v1/register", {
-      method: "post",
+      method: "POST",
       mode: 'cors',
-      body: {email, username, password}
+      body: data
   })
   .then(response => {
       if (!response.ok) {
+        console.log(response)
           throw new Error("Network response was not ok");
       }
       return response.json();
