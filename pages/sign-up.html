@@ -213,7 +213,7 @@
   const password = document.getElementById('password').value;
   const role= 'student';
 
-  const data = JSON.stringify({email, username, password, role}); 
+  const data = JSON.stringify({username, email, password, role}); 
   console.log(data)
 
   fetch("https://quizzy-dxd2.onrender.com/api/users/quizzy/v1/register", {
