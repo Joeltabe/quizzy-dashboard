@@ -140,6 +140,13 @@
                 <div class="mb-3">
                     <input type="password" class="form-control" placeholder="Password" aria-label="Password" id="password">
                 </div>
+                <div class="mb-3">
+                  <label for="role">Role:</label><br>
+                    <select id="role" name="role" class="form-control">
+                        <option value="admin">Admin</option>
+                        <option value="student">Student</option>
+                    </select><br>
+              </div>
                 <div class="form-check form-check-info text-start">
                     <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" checked>
                     <label class="form-check-label" for="flexCheckDefault">
@@ -206,39 +213,38 @@
   <!--   Core JS Files   -->
   <script>
     document.getElementById("signup-form").addEventListener("submit", function(event) {
-      event.preventDefault();
-  
-      const email = document.getElementById('email').value;
-      const username = document.getElementById('username').value;
-      const password = document.getElementById('password').value;
-      const role= 'student';
-  
-      const data = JSON.stringify({username, email, password, role}); 
-      console.log(data);
-  
-      var xhr = new XMLHttpRequest();
-      xhr.open("POST", "https://quizzy-dxd2.onrender.com/api/users/quizzy/v1/register", true);
-      xhr.setRequestHeader("Content-Type", "application/json");
-  
-      xhr.onreadystatechange = function() {
-        if (xhr.readyState === 4) {
-          if (xhr.status === 200) {
-            // Handle success response
-            console.log(xhr.responseText);
-            alert("User created successfully!");
-            // Open dashboard
-            window.location.href = "dashboard.html";
-          } else {
-            // Handle error
-            console.error("There was a problem with the form submission:", xhr.statusText);
-          }
-        }
-      };
-  
-      xhr.send(data);
+        event.preventDefault();
+
+        const formData = {
+            username: document.getElementById('username').value,
+            email: document.getElementById('email').value,
+            password: document.getElementById('password').value,
+            role: document.getElementById('role').value
+        };
+
+        fetch("https://quizzy-dxd2.onrender.com/api/users/quizzy/v1/register", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(formData)
+        })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error("Network response was not ok");
+            }
+            return response.json();
+        })
+        .then(data => { 
+            alert("User registered successfully!");
+            // Redirect to dashboard or perform other actions
+        })
+        .catch(error => {
+            console.error("There was a problem with the form submission:", error);
+            alert("An error occurred during registration. Please try again later.");
+        });
     });
-  </script>
-  
+</script>
   <script src="../assets/js/core/popper.min.js"></script>
   <script src="../assets/js/core/bootstrap.min.js"></script>
   <script src="../assets/js/plugins/perfect-scrollbar.min.js"></script>
