@@ -23,6 +23,7 @@
   <title>
     Quizzy Sign-up
   </title>
+  <script src="../assets/js/app.js"></script>
   <!--     Fonts and icons     -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
   <!-- Nucleo Icons -->
@@ -237,6 +238,8 @@
             return response.json();
         })
         .then(data => { 
+          storeUserSession(formData.email,formData.username,formData.role);
+
             Swal.fire({
                 icon: 'success',
                 title: 'Success!',
