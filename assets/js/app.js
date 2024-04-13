@@ -60,3 +60,4 @@ function getUserCredentials() {
         email: sessionData.email,
     };
 }
+

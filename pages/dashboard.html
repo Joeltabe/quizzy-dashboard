@@ -24,6 +24,7 @@
     Student Dashboard
   </title>
   <script src="../assets/js/app.js"></script>
+  <script src="../assets/js/greeting.js"></script>
   <!--     Fonts and icons     -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
   <!-- Nucleo Icons -->
@@ -31,6 +32,7 @@
   <link href="../assets/css/nucleo-svg.css" rel="stylesheet" />
   <!-- Font Awesome Icons -->
   <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
+  
   <link href="../assets/css/nucleo-svg.css" rel="stylesheet" />
   <!-- CSS Files -->
   <link id="pagestyle" href="../assets/css/argon-dashboard.css?v=2.0.4" rel="stylesheet" />
@@ -155,8 +157,11 @@
             <li class="breadcrumb-item text-sm text-white active" aria-current="page">Dashboard</li>
           </ol>
           <h6 class="font-weight-bolder text-white mb-0">Dashboard</h6>
+          <!-- HTML element to display the greeting -->
+          <p id="greeting" style="background-color: white;"></p> 
         </nav>
         <div class="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4" id="navbar">
+          
           <div class="ms-md-auto pe-md-3 d-flex align-items-center">
             <div class="input-group">
               <span class="input-group-text text-body"><i class="fas fa-search" aria-hidden="true"></i></span>
@@ -714,7 +719,7 @@
             console.log('User credentials:', userCredentials);
         } else {
             // Session has expired, redirect user to login page
-            window.location.href = '/login.html';
+            window.location.href = 'sign-in.html';
         }
   </script>
   <script>
@@ -809,6 +814,7 @@
       Scrollbar.init(document.querySelector('#sidenav-scrollbar'), options);
     }
   </script>
+  
   <!-- Github buttons -->
   <script async defer src="https://buttons.github.io/buttons.js"></script>
   <!-- Control Center for Soft Dashboard: parallax effects, scripts for the example pages etc -->
