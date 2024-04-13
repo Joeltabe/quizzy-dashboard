@@ -205,14 +205,15 @@
   <!-- -------- END FOOTER 3 w/ COMPANY DESCRIPTION WITH LINKS & SOCIAL ICONS & COPYRIGHT ------- -->
   <!--   Core JS Files   -->
   <script >
-    document.getElementById("signup-form").addEventListener("submit", function(event) {
+    document.getElementById("signup-form").addEventListener("submit", async function(event) {
   event.preventDefault();
 
   const email = document.getElementById('email').value;
   const username = document.getElementById('username').value;
   const password = document.getElementById('password').value;
+  const role= 'student';
 
-  const data = JSON.stringify({email, username, password}); 
+  const data = JSON.stringify({email, username, password, role}); 
   console.log(data)
 
   fetch("https://quizzy-dxd2.onrender.com/api/users/quizzy/v1/register", {
@@ -235,6 +236,15 @@
       // Handle error
       console.error("There was a problem with the form submission:", error);
   });
+
+  const res =  await fetch("http://localhost:8000/api/users/quizzy/v1/register", {
+      method: "POST",
+      mode: 'cors',
+      body: data
+  })
+
+  console.log(res);
+
 });
   </script>
   <script src="../assets/js/core/popper.min.js"></script>
