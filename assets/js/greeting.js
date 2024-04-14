@@ -9,7 +9,7 @@ function greetUser() {
     if (currentHour >= 5 && currentHour < 12) {
         // Morning
         greeting = '<span >Good morning</span>';
-        icon = '<i class="fas fa-sun" style="color: yellow;"></i>';
+        icon = '<i class="fas fa-sun" style="color: orange;"></i>';
     } else if (currentHour >= 12 && currentHour < 18) {
         // Afternoon
         greeting = '<span ">Good afternoon</span>';

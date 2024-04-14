@@ -23,6 +23,7 @@
   <title>
     Student Dashboard
   </title>
+  <script src="../assets/js/app.js"></script>
   <!--     Fonts and icons     -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
   <!-- Nucleo Icons -->
@@ -418,6 +419,15 @@
     </div>
   </div>
   <!--   Core JS Files   -->
+  <script>
+    if (isSessionValid()) {
+            const userCredentials = getUserCredentials();
+            console.log('User credentials:', userCredentials);
+        } else {
+            // Session has expired, redirect user to login page
+            window.location.href = 'sign-in.html';
+        }
+  </script>
   <script src="../assets/js/core/popper.min.js"></script>
   <script src="../assets/js/core/bootstrap.min.js"></script>
   <script src="../assets/js/plugins/perfect-scrollbar.min.js"></script>
