@@ -1,0 +1,19 @@
+
+{
+    "title": "Introduction to JavaScript",
+    "description": "Learn the basics of JavaScript programming language.",
+    "videos": [
+      {
+        "title": "Variables and Data Types",
+        "url": "#",
+        "notes": "This is a note for video 1."
+      },
+      {
+        "title": "Functions",
+        "url": "#",
+        "notes": "This is a note for video 2."
+      }
+      
+    ]
+  }
+  
