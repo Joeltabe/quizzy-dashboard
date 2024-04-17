@@ -90,6 +90,10 @@
                     </div>
                   </form>
                 </div>
+                   <!-- Loader -->
+                      <center><div id="loader" class="spinner-border text-primary" role="status" style="display: none;">
+                        <span class="visually-hidden">Loading...</span>
+                      </div></center>
                 <div class="card-footer text-center pt-0 px-lg-2 px-1">
                   <p class="mb-4 text-sm mx-auto">
                     Don't have an account?
@@ -132,6 +136,9 @@
     document.getElementById("loginForm").addEventListener("submit", function(event) {
         event.preventDefault();
 
+        // Show loader
+    document.getElementById("loader").style.display = "block";
+
         const formData = {
             email: document.getElementById('email').value,
             password: document.getElementById('password').value
@@ -151,6 +158,8 @@
             return response.json();
         })
         .then(data => { 
+            // Hide loader
+            document.getElementById("loader").style.display = "none";
             // Display SweetAlert2 success message
             storeUserSession(formData.email);
 
@@ -165,6 +174,8 @@
             });
         })
         .catch(error => {
+          // Hide loader
+        document.getElementById("loader").style.display = "none";
             console.error("There was a problem with the login:", error);
             // Display SweetAlert2 error message
             Swal.fire({
