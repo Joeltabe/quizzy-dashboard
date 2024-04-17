@@ -217,8 +217,12 @@
   <!-- -------- END FOOTER 3 w/ COMPANY DESCRIPTION WITH LINKS & SOCIAL ICONS & COPYRIGHT ------- -->
   <!--   Core JS Files   -->
   <script>
+    
     document.getElementById("signup-form").addEventListener("submit", function(event) {
         event.preventDefault();
+
+         // Show loader
+    document.getElementById("loader").style.display = "block";
 
         const formData = {
             username: document.getElementById('username').value,
