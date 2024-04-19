@@ -281,48 +281,48 @@
       
       <div class="col-lg-6">
         <div class="card mb-4">
-          <div class="card-header pb-0">
-            <h6>Add New Video</h6>
-          </div>
-          <div class="card-body px-4 pt-4">
-            <!-- Video upload form -->
-<form id="upload-video-form" enctype="multipart/form-data">
-    <div class="mb-3">
-      <label for="video-title" class="form-label">Title</label>
-      <input type="text" class="form-control" id="video-title" name="video_title" required>
-    </div>
-    <div class="mb-3">
-      <label for="video-category" class="form-label">Category</label>
-      <select class="form-select" id="video-category" name="video_category" required>
-        <option value="">Select Category</option>
-        <option value="category1">Web Development</option>
-        <option value="category2">Programming</option>
-        <!-- Add more options as needed -->
-      </select>
-    </div>
-    <div class="mb-3">
-      <label for="video-author" class="form-label">Author</label>
-      <input type="text" class="form-control" id="video-author" name="video_author" required>
-    </div>
-    <div class="mb-3">
-      <label for="video-description" class="form-label">Description</label>
-      <textarea class="form-control" id="video-description" name="video_description" rows="3" required></textarea>
-    </div>
-    <div class="mb-3">
-      <label for="video-file" class="form-label">Video File</label>
-      <input type="file" class="form-control" id="video-file" name="video_file" accept=".mp4" required>
-      <small class="text-muted">Upload an MP4 video file</small>
-    </div>
-    <div class="mb-3">
-      <label for="video-price" class="form-label">Price</label>
-      <input type="number" class="form-control" id="video-price" name="video_price" required>
-    </div>
-    <button type="submit" class="btn btn-primary">Upload Video</button>
-  </form>
-  
-          </div>
+            <div class="card-header pb-0">
+                <h6>Add New Video</h6>
+            </div>
+            <div class="card-body px-4 pt-4">
+                <!-- Video upload form -->
+                <form id="upload-video-form" method="POST" enctype="multipart/form-data">
+                    <div class="mb-3">
+                        <label for="video-title" class="form-label">Title</label>
+                        <input type="text" class="form-control" id="video-title" name="video_title" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="video-category" class="form-label">Category</label>
+                        <select class="form-select" id="video-category" name="video_category" required>
+                            <option value="">Select Category</option>
+                            <option value="webDevelopment">Web Development</option>
+                            <option value="programming">Programming</option>
+                            <!-- Add more options as needed -->
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="video-author" class="form-label">Author</label>
+                        <input type="text" class="form-control" id="video-author" name="video_author" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="video-description" class="form-label">Description</label>
+                        <textarea class="form-control" id="video-description" name="video_description" rows="3" required></textarea>
+                    </div>
+                    <div class="mb-3">
+                        <label for="video-file" class="form-label">Video File</label>
+                        <input type="file" class="form-control" id="video-file" name="video_file" accept=".mp4" required>
+                        <small class="text-muted">Upload an MP4 video file</small>
+                    </div>
+                    <div class="mb-3">
+                        <label for="video-price" class="form-label">Price</label>
+                        <input type="number" class="form-control" id="video-price" name="video_price" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Upload Video</button>
+                </form>
+            </div>
         </div>
-      </div>
+    </div>
+    
       
       <footer class="footer pt-3  ">
         <div class="container-fluid">
@@ -419,6 +419,55 @@
     </div>
   </div>
   <!--   Core JS Files   -->
+  <script>
+    document.getElementById("upload-video-form").addEventListener("submit", function(event) {
+    event.preventDefault();
+
+    // Get form values
+    const title = document.getElementById("video-title").value;
+    const videoUrl = document.getElementById("video-file").value;
+    const author = document.getElementById("video-author").value;
+    const price = document.getElementById("video-price").value;
+    const category = document.getElementById("video-category").value; // Define the category variable here
+
+    // Create video object
+    const video = {
+        "title": title,
+        "videoUrl": videoUrl,
+        "author": author,
+        "price": price,
+        "rating": 4
+    };
+
+    // Fetch existing data from JSON file
+    fetch("../docs/video_data.json")
+    .then(response => response.json())
+    .then(data => {
+        // Add new video to the selected category
+        data[category].push(video);
+
+        // Update JSON file with new data
+        return fetch("../docs/video_data.json", {
+            method: "PUT",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(data)
+        });
+    })
+    .then(response => {
+        if (!response.ok) {
+            throw new Error("Network response was not ok");
+        }
+        alert("Video data added successfully!");
+    })
+    .catch(error => {
+        console.error("Error:", error);
+        alert("Error adding video data. Please try again.");
+    });
+});
+
+</script>
   <script>
     if (isSessionValid()) {
             const userCredentials = getUserCredentials();

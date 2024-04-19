@@ -1,0 +1,69 @@
+{
+    "webDevelopment": [
+      {
+        "title": "Fundamentals of Web design",
+        "thumbnail": "../assets/img/w3c.jpg",
+        "videoUrl": "path_to_video",
+        "author": "Tabe Joel",
+        "price": "2000 cfa",
+        "rating": 4
+      },
+      {
+        "title": "Fundamentals of HTML",
+        "thumbnail": "../assets/img/fundamentals_of_html.jpg",
+        "videoUrl": "path_to_video",
+        "author": "Tabe Joel",
+        "price": "2000 cfa",
+        "rating": 3
+      },
+      {
+        "title": "Fundamentals of CSS",
+        "thumbnail": "../assets/img/fundamentals_of_css.png",
+        "videoUrl": "path_to_video",
+        "author": "Tabe Joel",
+        "price": "2000 cfa",
+        "rating": 5
+      },
+      {
+        "title": "Responsive Web design",
+        "thumbnail": "../assets/img/responsive-design.jpg",
+        "videoUrl": "path_to_video",
+        "author": "Tabe Joel",
+        "price": "3000 cfa",
+        "rating": 3
+      },
+      {
+        "title": "WordPress",
+        "thumbnail": "../assets/img/wordpress.jpg",
+        "videoUrl": "path_to_video",
+        "author": "Tabe Joel",
+        "price": "9000 cfa",
+        "rating": 2
+      },
+      {
+        "title": "Web Hosting",
+        "thumbnail": "../assets/img/web-hosting.jpg",
+        "videoUrl": "path_to_video",
+        "author": "Tabe Joel",
+        "price": "3000 cfa",
+        "rating": 3
+      }
+    ],
+    "programming": [
+      {
+        "title": "Introduction to Python",
+        "videoUrl": "path_to_video",
+        "author": "John Doe",
+        "price": "Free",
+        "rating": 4
+      },
+      {
+        "title": "JavaScript Fundamentals",
+        "videoUrl": "path_to_video",
+        "author": "Jane Smith",
+        "price": "Paid",
+        "rating": 5
+      }
+    ]
+  }
+  

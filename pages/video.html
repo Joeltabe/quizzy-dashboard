@@ -287,73 +287,39 @@
       </div>
     </nav>
     <!-- End Navbar -->
-    <div class="container-fluid py-4 ">
-      
+    <div class="container-fluid py-4">
       <div class="row">
-        <div class="col-12">
-          <div class="card mb-4 dde">
-            <div class="card-header pb-0 ">
-              <h6>[Course Name]</h6>
-            </div>
-            <div class="card-body px-0 pt-0 pb-2">
-              <div class="table-responsive p-0">
-                              <!-- Main Video Display -->
-                  <div class="container mt-4">
-                    <div class="row">
-                        <!-- Main Video Display -->
-                        <div class="col-md-8">
-                            <div id="video-player">
-                                <!-- Main video player will be displayed here -->
-                            </div>
-                        </div>
-                        <!-- Sidebar with Course Contents -->
-                        <div class="col-md-4">
-                            <div id="course-contents">
-                                <!-- Course contents will be displayed here -->
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
+          <div class="col-12">
+              <div class="card mb-4 dde">
+                  <div class="card-header pb-0">
+                      <h6 id="video-title">[Video Title]</h6>
+                  </div>
+                  <div class="card-body px-0 pt-0 pb-2">
+                      <div class="table-responsive p-0">
+                          <div class="container mt-4">
+                              <div class="row">
+                                  <div class="col-md-8">
+                                      <div id="video-player">
+                                          <!-- Main video player will be displayed here -->
+                                      </div>
+                                  </div>
+                                  <div class="col-md-4">
+                                      <div id="course-contents">
+                                          <!-- Course contents will be displayed here -->
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
               </div>
-            </div>
           </div>
-        </div>
       </div>
-     
-      <footer class="footer pt-3  ">
-        <div class="container-fluid">
-          <div class="row align-items-center justify-content-lg-between">
-            <div class="col-lg-6 mb-lg-0 mb-4">
-              <div class="copyright text-center text-sm text-muted text-lg-start">
-                © <script>
-                  document.write(new Date().getFullYear())
-                </script>,
-                made with <i class="fa fa-heart"></i> by
-                <a href="https://www.creative-tim.com" class="font-weight-bold" target="_blank">Straight Bsc</a>
-                
-              </div>
-            </div>
-            <div class="col-lg-6">
-              <ul class="nav nav-footer justify-content-center justify-content-lg-end">
-                <li class="nav-item">
-                  <a href="#" class="nav-link text-muted" target="_blank">Straight Bsc</a>
-                </li>
-                <li class="nav-item">
-                  <a href="#" class="nav-link text-muted" target="_blank">About Us</a>
-                </li>
-                <li class="nav-item">
-                  <a href="#" class="nav-link text-muted" target="_blank">Blog</a>
-                </li>
-                <li class="nav-item">
-                  <a href="#" class="nav-link pe-0 text-muted" target="_blank">License</a>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
+      <footer class="footer pt-3">
+          <!-- Footer content -->
       </footer>
-    </div>
+  </div>
+  
   </main>
   <div class="fixed-plugin">
     <a class="fixed-plugin-button text-dark position-fixed px-3 py-2">
@@ -438,126 +404,140 @@
       Scrollbar.init(document.querySelector('#sidenav-scrollbar'), options);
     }
   </script>
-   <script>
-    // Function to display main video
-    function displayMainVideo(videoUrl) {
-        const videoPlayer = document.getElementById('video-player');
-        videoPlayer.innerHTML = `<video controls src="${videoUrl}" class="w-100"></video>`;
-    }
+  
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+        async function fetchVideoData() {
+            try {
+                const response = await fetch('../docs/video_data.json');
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                const videoData = await response.json();
+                // Use videoData here or pass it to another function for processing
+                return videoData;
+            } catch (error) {
+                console.error('Error fetching video data:', error);
+                // Handle error gracefully, e.g., display an error message to the user
+            }
+        }
 
-    // Function to display course contents
-    function displayCourseContents(courseContents) {
-        const courseContentsDiv = document.getElementById('course-contents');
-        let contentHTML = '<h3>Course Contents</h3><ul>';
-        courseContents.forEach(content => {
-            contentHTML += `<li><a href="#" onclick="displayMainVideo('${content.videoUrl}')">${content.title}</a></li>`;
+        // Call the fetchVideoData function and handle the returned promise
+        fetchVideoData().then(videoData => {
+            // Process videoData here
+            const linkData = getLinkData();
+            const courseContent = findCourseContent(videoData, linkData);
+            displayCourseContents(courseContent);
+        }).catch(error => {
+            console.error('Error:', error);
         });
-        contentHTML += '</ul>';
-        courseContentsDiv.innerHTML = contentHTML;
-    }
 
-    // Sample course data (replace with your actual data)
-    const courses = {
-        "webDevelopment": [
-    {
-        "title": "HTML Basics",
-        "videoUrl": "../assets/vids/Html_basics.mp4"
-    },
-    {
-        "title": "HTML Structure",
-        "videoUrl": "../assets/vids/HTML_structure .mp4"
-    },
-    {
-        "title": "HTML Elements",
-        "videoUrl": "../assets/vids/HTML_Elements.mp4"
-    },
-    {
-        "title": "HTML Attributes",
-        "videoUrl": "../assets/vids/Html_basics.mp4"
-    },
-    {
-        "title": "HTML Forms",
-        "videoUrl": "../assets/vids/Html_basics.mp4"
-    },
-    {
-        "title": "HTML Tables",
-        "videoUrl": "../assets/vids/Html_basics.mp4"
-    },
-    {
-        "title": "HTML Links and Anchors",
-        "videoUrl": "../assets/vids/Html_basics.mp4"
-    },
-    {
-        "title": "HTML Images",
-        "videoUrl": "../assets/vids/Html_basics.mp4"
-    },
-    {
-        "title": "HTML Lists",
-        "videoUrl": "../assets/vids/Html_basics.mp4"
-    },
-    {
-        "title": "HTML Semantics",
-        "videoUrl": "../assets/vids/Html_basics.mp4"
-    },
-    {
-        "title": "HTML Layouts",
-        "videoUrl": "../assets/vids/Html_basics.mp4"
-    },
-    {
-        "title": "HTML Responsive Design",
-        "videoUrl": "../assets/vids/Html_basics.mp4"
-    },
-    {
-        "title": "HTML Accessibility",
-        "videoUrl": "../assets/vids/Html_basics.mp4"
-    },
-    {
-        "title": "HTML Best Practices",
-        "videoUrl": "../assets/vids/Html_basics.mp4"
-    },
-    {
-        "title": "HTML SEO Optimization",
-        "videoUrl": "../assets/vids/Html_basics.mp4"
-    },
-    {
-        "title": "HTML Metadata",
-        "videoUrl": "../assets/vids/Html_basics.mp4"
-    },
-    {
-        "title": "HTML Audio and Video",
-        "videoUrl": "../assets/vids/Html_basics.mp4"
-    },
-    {
-        "title": "HTML Canvas",
-        "videoUrl": "../assets/vids/Html_basics.mp4"
-    },
-    {
-        "title": "HTML Web Storage",
-        "videoUrl": "../assets/vids/Html_basics.mp4"
-    },
-    {
-        "title": "HTML Geolocation",
-        "videoUrl": "../assets/vids/Html_basics.mp4"
-    }
+        // Function to extract data from link
+        function getLinkData() {
+            const link = document.querySelector('.video-link');
+            if (!link) return null; // Handle case where link is not found
+            return {
+                title: link.dataset.title,
+                author: link.dataset.author,
+                price: link.dataset.price
+            };
+        }
 
-            // Add more course content objects as needed
-        ],
-        "programming": [
-            {
-                "title": "Introduction to Python",
-                "videoUrl": "path_to_video"
-            },
-            {
-                "title": "JavaScript Fundamentals",
-                "videoUrl": "path_to_video"
-            },
-            // Add more course content objects as needed
-        ]
-    };
+        // Function to find course content based on link data
+        function findCourseContent(videoData, linkData) {
+            if (!linkData) return []; // Handle case where link data is not available
+            const { title, author, price } = linkData;
+            const courses = videoData.webDevelopment; // Assuming web development data
+            return courses.filter(course => {
+                return course.title === title && course.author === author && course.price === price;
+            });
+        }
 
-    // Display initial course contents
-    displayCourseContents(courses.webDevelopment); // Displaying web development course by default
+        // Function to display main video
+        function displayMainVideo(videoUrl) {
+            const videoPlayer = document.getElementById('video-player');
+            videoPlayer.innerHTML = `<video controls src="${videoUrl}" class="w-100"></video>`;
+        }
+
+        // Function to display course contents
+        function displayCourseContents(courseContents) {
+            const courseContentsDiv = document.getElementById('course-contents');
+            let contentHTML = '<h3>Course Contents</h3><ul>';
+            courseContents.forEach(content => {
+                contentHTML += `<li><a href="#" onclick="displayMainVideo('${content.videoUrl}')">${content.title}</a></li>`;
+            });
+            contentHTML += '</ul>';
+            courseContentsDiv.innerHTML = contentHTML;
+        }
+    });
 </script>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+      async function fetchVideoData() {
+          try {
+              const response = await fetch('../docs/video_data.json');
+              if (!response.ok) {
+                  throw new Error('Network response was not ok');
+              }
+              const videoData = await response.json();
+              // Use videoData here or pass it to another function for processing
+              return videoData;
+          } catch (error) {
+              console.error('Error fetching video data:', error);
+              // Handle error gracefully, e.g., display an error message to the user
+          }
+      }
+
+      // Call the fetchVideoData function and handle the returned promise
+      fetchVideoData().then(videoData => {
+          // Process videoData here
+          const linkData = getLinkData();
+          const courseContent = findCourseContent(videoData, linkData);
+          displayCourseContents(courseContent);
+      }).catch(error => {
+          console.error('Error:', error);
+      });
+
+      // Function to extract data from link
+      function getLinkData() {
+          const link = document.querySelector('.video-link');
+          if (!link) return null; // Handle case where link is not found
+          return {
+              title: link.dataset.title,
+              author: link.dataset.author,
+              price: link.dataset.price
+          };
+      }
+
+      // Function to find course content based on link data
+      function findCourseContent(videoData, linkData) {
+          if (!linkData) return []; // Handle case where link data is not available
+          const { title, author, price } = linkData;
+          const courses = videoData.webDevelopment; // Assuming web development data
+          return courses.filter(course => {
+              return course.title === title && course.author === author && course.price === price;
+          });
+      }
+
+      // Function to display main video
+      function displayMainVideo(videoUrl) {
+          const videoPlayer = document.getElementById('video-player');
+          videoPlayer.innerHTML = `<video controls src="${videoUrl}" class="w-100"></video>`;
+      }
+
+      // Function to display course contents
+      function displayCourseContents(courseContents) {
+          const courseContentsDiv = document.getElementById('course-contents');
+          let contentHTML = '<h3>Course Contents</h3><ul>';
+          courseContents.forEach(content => {
+              contentHTML += `<li><a href="#" onclick="displayMainVideo('${content.videoUrl}')">${content.title}</a></li>`;
+          });
+          contentHTML += '</ul>';
+          courseContentsDiv.innerHTML = contentHTML;
+      }
+  });
+</script>
+
   <!-- Github buttons -->
   <script async defer src="https://buttons.github.io/buttons.js"></script>
   <!-- Control Center for Soft Dashboard: parallax effects, scripts for the example pages etc -->

@@ -1,19 +1,51 @@
-
 {
-    "title": "Introduction to JavaScript",
-    "description": "Learn the basics of JavaScript programming language.",
-    "videos": [
-      {
-        "title": "Variables and Data Types",
-        "url": "#",
-        "notes": "This is a note for video 1."
-      },
-      {
-        "title": "Functions",
-        "url": "#",
-        "notes": "This is a note for video 2."
-      }
-      
-    ]
-  }
-  
+  "title": "C Programming",
+  "description": "Master the fundamentals of the C programming language.",
+  "videos": [
+    {
+      "title": "Introduction to C",
+      "url": "../assets/vids/Html_basics.mp4",
+      "notes": "This video introduces the basics of the C programming language, including its history, features, and applications."
+    },
+    {
+      "title": "Variables and Data Types",
+      "url": "#",
+      "notes": "In this video, you'll learn about variables, data types, and how to declare and initialize them in C."
+    },
+    {
+      "title": "Operators and Expressions",
+      "url": "#",
+      "notes": "This video covers operators and expressions in C, including arithmetic, relational, logical, and bitwise operators."
+    },
+    {
+      "title": "Control Flow Statements",
+      "url": "#",
+      "notes": "Learn about control flow statements such as if, else, switch, and loops (while, do-while, for) in C."
+    },
+    {
+      "title": "Functions",
+      "url": "#",
+      "notes": "In this video, you'll explore the concept of functions in C, including function declaration, definition, and invocation."
+    },
+    {
+      "title": "Arrays and Strings",
+      "url": "#",
+      "notes": "This video covers arrays and strings in C, including array declaration, initialization, and manipulation."
+    },
+    {
+      "title": "Pointers",
+      "url": "#",
+      "notes": "Learn about pointers in C, including pointer declaration, dereferencing, pointer arithmetic, and their applications."
+    },
+    {
+      "title": "Structures and Unions",
+      "url": "#",
+      "notes": "Explore structures and unions in C, including their declaration, initialization, and accessing members."
+    },
+    {
+      "title": "File Handling",
+      "url": "#",
+      "notes": "In this video, you'll learn about file handling in C, including opening, reading, writing, and closing files."
+    }
+  ]
+}
