@@ -293,11 +293,141 @@
             <div class="card-body px-0 pt-0 pb-2">
               <div class="table-responsive p-0">
                 <div class="container mt-4">
-                  <h2 class="mb-4">Web Development Videos</h2>
-                  <div class="row" id="video-list">
-                      <!-- Video cards will be dynamically added here -->
+                    <h2 class="mb-4">Web Development Videos</h2>
+                    <div id="web-development-carousel" class="carousel slide mb-5" data-ride="carousel">
+                      <div class="carousel-inner">
+                        <div class="carousel-item active">
+                          <div class="row">
+                            <!-- Static video data for demonstration -->
+                            <div class="col-md-4">
+                                <div class="card">
+                                  <img src="../assets/img/w3c.jpg" class="card-img-top video-thumbnail" alt="Video 1">
+                                  <div class="card-body">
+                                    <h5 class="card-title video-title">Fundamentals of Web design</h5>
+                                    <p class="card-text video-author">Author: Tabe Joel</p>
+                                    <p class="card-text video-price">Price: 2000 cfa</p>
+                                    <!-- Rating stars -->
+                                    <div>
+                                      <i class="fas fa-star"></i>
+                                      <i class="fas fa-star"></i>
+                                      <i class="fas fa-star"></i>
+                                      <i class="fas fa-star"></i>
+                                      <i class="far fa-star"></i>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              
+                            <div class="col-md-4">
+                              <a href="vod.html?id=1">
+                              <div class="card">
+                                <img src="../assets/img/fundamentals_of_html.jpg" class="card-img-top video-thumbnail" alt="Video 1">
+                                <div class="card-body">
+                                  <h5 class="card-title video-title">Fundamentals of HTML</h5>
+                                  <p class="card-text video-author">Author: Tabe Joel</p>
+                                  <p class="card-text video-price">Price: 2000 cfa</p>
+                                  <!-- Rating stars -->
+                                  <div>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                  </div>
+                                </div>
+                              </div>
+                            </a>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="card">
+                                  <img src="../assets/img/fundamentals_of_css.png" class="card-img-top video-thumbnail" alt="Video 1">
+                                  <div class="card-body">
+                                    <h5 class="card-title video-title">Fundamentals of CSS</h5>
+                                    <p class="card-text video-author">Author: Tabe Joel</p>
+                                    <p class="card-text video-price">Price: 2000 cfa</p>
+                                    <!-- Rating stars -->
+                                    <div>
+                                      <i class="fas fa-star"></i>
+                                      <i class="fas fa-star"></i>
+                                      <i class="fas fa-star"></i>
+                                      <i class="fas fa-star"></i>
+                                      <i class="fas fa-star"></i>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+
+                              <div class="col-md-4">
+                                <div class="card">
+                                  <img src="../assets/img/responsive-design.jpg" class="card-img-top video-thumbnail" alt="Video 1">
+                                  <div class="card-body">
+                                    <h5 class="card-title video-title">Responsive Web design</h5>
+                                    <p class="card-text video-author">Author: Tabe Joel</p>
+                                    <p class="card-text video-price">Price: 3000 cfa</p>
+                                    <!-- Rating stars -->
+                                    <div>
+                                      <i class="fas fa-star"></i>
+                                      <i class="fas fa-star"></i>
+                                      <i class="fas fa-star"></i>
+                                      <i class="far fa-star"></i>
+                                      <i class="far fa-star"></i>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="col-md-4">
+                                <div class="card">
+                                  <img src="../assets/img/wordpress.jpg" class="card-img-top video-thumbnail" alt="Video 1">
+                                  <div class="card-body">
+                                    <h5 class="card-title video-title">wordpress</h5>
+                                    <p class="card-text video-author">Author: Tabe Joel</p>
+                                    <p class="card-text video-price">Price: 9000 cfa</p>
+                                    <!-- Rating stars -->
+                                    <div>
+                                      <i class="fas fa-star"></i>
+                                      <i class="fas fa-star"></i>
+                                      <i class="far fa-star"></i>
+                                      <i class="far fa-star"></i>
+                                      <i class="far fa-star"></i>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="col-md-4">
+                                    <div class="card">
+                                  <img src="../assets/img/web-hosting.jpg" class="card-img-top video-thumbnail" alt="Video 1">
+                                  <div class="card-body">
+                                    <h5 class="card-title video-title">Web Hosting</h5>
+                                    <p class="card-text video-author">Author: Tabe Joel</p>
+                                    <p class="card-text video-price">Price: 3000 cfa</p>
+                                    <!-- Rating stars -->
+                                    <div>
+                                      <i class="fas fa-star"></i>
+                                      <i class="fas fa-star"></i>
+                                      <i class="fas fa-star"></i>
+                                      <i class="far fa-star"></i>
+                                      <i class="far fa-star"></i>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            <!-- Repeat similar structure for other videos -->
+                          </div>
+                        </div>
+                        <!-- Add more carousel items as needed -->
+                      </div>
+                      <a class="carousel-control-prev" href="#web-development-carousel" role="button" data-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                      </a>
+                      <a class="carousel-control-next" href="#web-development-carousel" role="button" data-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                      </a>
+                    </div>
+                
+                    <!-- Similar structure for other categories -->
                   </div>
-              </div>
                   <div class="container mt-4">
                     <h2 class="mb-4">Programming Videos</h2>
                     <div id="web-development-carousel" class="carousel slide mb-5" data-ride="carousel">
@@ -476,9 +606,9 @@
     
   </main>
   <div class="fixed-plugin">
-    <a class="fixed-plugin-button text-dark position-fixed px-3 py-2">
+    <!-- <a class="fixed-plugin-button text-dark position-fixed px-3 py-2">
       <i class="fa fa-cog py-2"> </i>
-    </a>
+    </a> -->
     <div class="card shadow-lg">
       <div class="card-header pb-0 pt-3 ">
         <div class="float-start">
@@ -545,57 +675,6 @@
             window.location.href = 'sign-in.html';
         }
   </script>
-
-<script>
-  
-  async function fetchVideoData() {
-    try {
-      const response = await fetch('../docs/course.json');
-      if (!response.ok) {
-        throw new Error('Network response was not ok');
-      }
-      return await response.json();
-    } catch (error) {
-      console.error('Error fetching video data:', error);
-    }
-  }
-
-  async function displayVideoList() {
-    const videoData = await fetchVideoData();
-    const videoListDiv = document.getElementById('video-list');
-    videoData.webDevelopment.forEach(video => {
-      const card = `
-        <div class="col-md-4">
-          <div class="card">
-            <img src="${video.thumbnail}" class="card-img-top" alt="${video.title}">
-            <div class="card-body">
-              <h5 class="card-title">${video.title}</h5>
-              <p class="card-text">Author: ${video.author}</p>
-              <p class="card-text">Price: ${video.price}</p>
-              <a href="#" class="btn btn-primary watch-video" data-title="${video.title}">Watch</a>
-            </div>
-          </div>
-        </div>
-      `;
-      videoListDiv.innerHTML += card;
-    });
-
-    // Add event listener to each 'Watch' button
-    const watchButtons = document.querySelectorAll('.watch-video');
-    watchButtons.forEach(button => {
-      // Modify the event listener to append the selected video title to the URL
-      button.addEventListener('click', event => {
-        event.preventDefault();
-        const videoTitle = button.getAttribute('data-title');
-        window.location.href = `vod.html?title=${encodeURIComponent(videoTitle)}`;
-      });
-
-    });
-  }
-
-  displayVideoList();
-</script>
-
   <script src="../assets/js/core/popper.min.js"></script>
   <script src="../assets/js/core/bootstrap.min.js"></script>
   <script src="../assets/js/plugins/perfect-scrollbar.min.js"></script>
@@ -603,17 +682,8 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-<!-- Video list page script -->
-<script>
-  function displayMainVideo(courseId, videoUrl) {
-    // Add courseId to the URL parameters
-    window.location.href = `video.html?course=${courseId}&videoUrl=${encodeURIComponent(videoUrl)}`;
-}
-
-</script>
 
   <script>
-    
     var win = navigator.platform.indexOf('Win') > -1;
     if (win && document.querySelector('#sidenav-scrollbar')) {
       var options = {
@@ -622,15 +692,6 @@
       Scrollbar.init(document.querySelector('#sidenav-scrollbar'), options);
     }
   </script>
-  <!-- Start of LiveChat (www.livechat.com) code -->
-<script>
-  window.__lc = window.__lc || {};
-  window.__lc.license = 17715030;
-  ;(function(n,t,c){function i(n){return e._h?e._h.apply(null,n):e._q.push(n)}var e={_q:[],_h:null,_v:"2.0",on:function(){i(["on",c.call(arguments)])},once:function(){i(["once",c.call(arguments)])},off:function(){i(["off",c.call(arguments)])},get:function(){if(!e._h)throw new Error("[LiveChatWidget] You can't use getters before load.");return i(["get",c.call(arguments)])},call:function(){i(["call",c.call(arguments)])},init:function(){var n=t.createElement("script");n.async=!0,n.type="text/javascript",n.src="https://cdn.livechatinc.com/tracking.js",t.head.appendChild(n)}};!n.__lc.asyncInit&&e.init(),n.LiveChatWidget=n.LiveChatWidget||e}(window,document,[].slice))
-</script>
-<noscript><a href="https://www.livechat.com/chat-with/17715030/" rel="nofollow">Chat with us</a>, powered by <a href="https://www.livechat.com/?welcome" rel="noopener nofollow" target="_blank">LiveChat</a></noscript>
-<!-- End of LiveChat code -->
-
   <!-- Github buttons -->
   <script async defer src="https://buttons.github.io/buttons.js"></script>
   <!-- Control Center for Soft Dashboard: parallax effects, scripts for the example pages etc -->
