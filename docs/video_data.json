@@ -3,24 +3,29 @@
     "id": "1",
     "title": "Introduction to Programming: Variables and Data Types",
     "description": "Learn about variables, data types, and basic operations.",
+    "course_id": "1",
     "videoUrl": "../assets/vids/Html_basics.mp4"
+    
   },
   {
     "id": "2",
     "title": "Introduction to Programming: Control Flow",
     "description": "Understand control flow statements like if, else, and loops.",
+    "course_id": "1",
     "videoUrl": "../assets/vids/Html_basics.mp4"
   },
   {
     "id": "3",
     "title": "Data Structures: Arrays",
     "description": "Introduction to arrays and array manipulation.",
+    "course_id": "2",
     "videoUrl": "../assets/vids/HTML_Elements.mp4"
   },
   {
     "id": "4",
     "title": "Data Structures: Linked Lists",
     "description": "Learn about linked lists and their operations.",
+    "course_id": "2",
     "videoUrl": "../assets/vids/HTML_structure .mp4"
   }
 ]
