@@ -1,0 +1,33 @@
+[
+  {
+    "id": "1",
+    "title": "Introduction to Programming",
+    "description": "A beginner-friendly course on programming concepts.",
+    "materials": [
+      {
+        "title": "Course Syllabus",
+        "description": "Outline of topics covered in the course",
+        "fileUrl": "https://example.com/syllabus.pdf"
+      },
+      {
+        "title": "Assignment 1",
+        "description": "First assignment for practice",
+        "fileUrl": "https://example.com/assignment1.pdf"
+      }
+    ],
+    "videos": ["1", "2"]
+  },
+  {
+    "id": "2",
+    "title": "Data Structures and Algorithms",
+    "description": "A comprehensive course on data structures and algorithms.",
+    "materials": [
+      {
+        "title": "Course Notes",
+        "description": "Detailed notes on key concepts",
+        "fileUrl": "https://example.com/notes.pdf"
+      }
+    ],
+    "videos": ["3", "4"]
+  }
+]

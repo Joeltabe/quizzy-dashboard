@@ -547,41 +547,55 @@
   </script>
 
 <script>
+  
   async function fetchVideoData() {
-      try {
-          const response = await fetch('../docs/video_data.json');
-          if (!response.ok) {
-              throw new Error('Network response was not ok');
-          }
-          return await response.json();
-      } catch (error) {
-          console.error('Error fetching video data:', error);
+    try {
+      const response = await fetch('../docs/course.json');
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
       }
+      return await response.json();
+    } catch (error) {
+      console.error('Error fetching video data:', error);
+    }
   }
 
   async function displayVideoList() {
-      const videoData = await fetchVideoData();
-      const videoListDiv = document.getElementById('video-list');
-      videoData.webDevelopment.forEach(video => {
-          const card = `
-              <div class="col-md-4">
-                  <div class="card">
-                      <img src="${video.thumbnail}" class="card-img-top" alt="${video.title}">
-                      <div class="card-body">
-                          <h5 class="card-title">${video.title}</h5>
-                          <p class="card-text">Author: ${video.author}</p>
-                          <p class="card-text">Price: ${video.price}</p>
-                          <a href="vod.html?course=webDevelopment&title=${encodeURIComponent(video.title)}" class="btn btn-primary">Watch</a>
-                      </div>
-                  </div>
-              </div>
-          `;
-          videoListDiv.innerHTML += card;
+    const videoData = await fetchVideoData();
+    const videoListDiv = document.getElementById('video-list');
+    videoData.webDevelopment.forEach(video => {
+      const card = `
+        <div class="col-md-4">
+          <div class="card">
+            <img src="${video.thumbnail}" class="card-img-top" alt="${video.title}">
+            <div class="card-body">
+              <h5 class="card-title">${video.title}</h5>
+              <p class="card-text">Author: ${video.author}</p>
+              <p class="card-text">Price: ${video.price}</p>
+              <a href="#" class="btn btn-primary watch-video" data-title="${video.title}">Watch</a>
+            </div>
+          </div>
+        </div>
+      `;
+      videoListDiv.innerHTML += card;
+    });
+
+    // Add event listener to each 'Watch' button
+    const watchButtons = document.querySelectorAll('.watch-video');
+    watchButtons.forEach(button => {
+      // Modify the event listener to append the selected video title to the URL
+      button.addEventListener('click', event => {
+        event.preventDefault();
+        const videoTitle = button.getAttribute('data-title');
+        window.location.href = `vod.html?title=${encodeURIComponent(videoTitle)}`;
       });
+
+    });
   }
 
   displayVideoList();
 </script>
+
   <script src="../assets/js/core/popper.min.js"></script>
   <script src="../assets/js/core/bootstrap.min.js"></script>
   <script src="../assets/js/plugins/perfect-scrollbar.min.js"></script>
