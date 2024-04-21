@@ -1,33 +1,110 @@
 [
   {
     "id": "1",
-    "title": "Introduction to Programming",
-    "description": "A beginner-friendly course on programming concepts.",
-    "materials": [
-      {
-        "title": "Course Syllabus",
-        "description": "Outline of topics covered in the course",
-        "fileUrl": "https://example.com/syllabus.pdf"
-      },
-      {
-        "title": "Assignment 1",
-        "description": "First assignment for practice",
-        "fileUrl": "https://example.com/assignment1.pdf"
-      }
-    ],
-    "videos": ["1", "2"]
+    "category": "Programming",
+    "title": "Algorithms",
+    "thumbnail": "../assets/img/algoritam.jpg",
+    "author": "Tabe Joel",
+    "price": "2000 cfa",
+    "rating": 4.5
   },
   {
     "id": "2",
-    "title": "Data Structures and Algorithms",
-    "description": "A comprehensive course on data structures and algorithms.",
-    "materials": [
-      {
-        "title": "Course Notes",
-        "description": "Detailed notes on key concepts",
-        "fileUrl": "https://example.com/notes.pdf"
-      }
-    ],
-    "videos": ["3", "4"]
+    "category": "Programming",
+    "title": "Fundamentals of Python",
+    "thumbnail": "../assets/img/python.jpg",
+    "author": "Tabe Joel",
+    "price": "2000 cfa",
+    "rating": 4.0
+  },
+  {
+    "id": "3",
+    "category": "Programming",
+    "title": "Fundamentals of JavaScript",
+    "thumbnail": "../assets/img/javascript.jpg",
+    "author": "Tabe Joel",
+    "price": "2000 cfa",
+    "rating": 5.0
+  },
+  {
+    "id": "4",
+    "category": "Programming",
+    "title": "Basics of Database",
+    "thumbnail": "../assets/img/mysql.jpg",
+    "author": "Tabe Joel",
+    "price": "3000 cfa",
+    "rating": 4.0
+  },
+  {
+    "id": "5",
+    "category": "Programming",
+    "title": "Basics of XML",
+    "thumbnail": "../assets/img/xml.jpg",
+    "author": "Tabe Joel",
+    "price": "9000 cfa",
+    "rating": 3.5
+  },
+  {
+    "id": "6",
+    "category": "Programming",
+    "title": "Java Tutorial",
+    "thumbnail": "../assets/img/java.jpg",
+    "author": "Tabe Joel",
+    "price": "3000 cfa",
+    "rating": 4.0
+  },
+  {
+    "id": "7",
+    "category": "Web Development",
+    "title": "Fundamentals of Web design",
+    "thumbnail": "../assets/img/w3c.jpg",
+    "author": "Tabe Joel",
+    "price": "2000 cfa",
+    "rating": 4.0
+  },
+  {
+    "id": "2",
+    "category": "Web Development",
+    "title": "Fundamentals of HTML",
+    "thumbnail": "../assets/img/fundamentals_of_html.jpg",
+    "author": "Tabe Joel",
+    "price": "2000 cfa",
+    "rating": 4.5
+  },
+  {
+    "id": "9",
+    "category": "Web Development",
+    "title": "Fundamentals of CSS",
+    "thumbnail": "../assets/img/fundamentals_of_css.png",
+    "author": "Tabe Joel",
+    "price": "2000 cfa",
+    "rating": 4.7
+  },
+  {
+    "id": "10",
+    "category": "Web Development",
+    "title": "Responsive Web design",
+    "thumbnail": "../assets/img/responsive-design.jpg",
+    "author": "Tabe Joel",
+    "price": "3000 cfa",
+    "rating": 4.2
+  },
+  {
+    "id": "11",
+    "category": "Web Development",
+    "title": "WordPress",
+    "thumbnail": "../assets/img/wordpress.jpg",
+    "author": "Tabe Joel",
+    "price": "9000 cfa",
+    "rating": 3.8
+  },
+  {
+    "id": "12",
+    "category": "Web Development",
+    "title": "Web Hosting",
+    "thumbnail": "../assets/img/web-hosting.jpg",
+    "author": "Tabe Joel",
+    "price": "3000 cfa",
+    "rating": 4.6
   }
 ]
