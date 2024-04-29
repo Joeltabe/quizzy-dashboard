@@ -1,0 +1,71 @@
+{
+    "subjects": [
+      {
+        "name": "General Knowledge",
+        "totalQuestions": 3,
+        "passRate": 70,
+        "questions": [
+          {
+            "question": "What is t he capital of France?",
+            "options": ["Paris", "London", "Berlin", "Rome"],
+            "correctAnswer": "Paris"
+          },
+          {
+            "question": "What is the capital of England?",
+            "options": ["Paris", "London", "Berlin", "Rome"],
+            "correctAnswer": "London"
+          },
+          {
+            "question": "What is the capital of Italy?",
+            "options": ["Paris", "London", "Berlin", "Rome"],
+            "correctAnswer": "Rome"
+          }
+        ]
+      },
+      {
+        "name": "Computer Knowledge",
+        "totalQuestions": 3,
+        "passRate": 70,
+        "questions": [
+          {
+            "question": "What is the main function of a computer's CPU?",
+            "options": ["To store data", "To output data", "To process data", "To input data"],
+            "correctAnswer": "To process data"
+          },
+          {
+            "question": "What does 'RAM' stand for in computer terminology?",
+            "options": ["Random Access Memory", "Readily Available Memory", "Randomly Allocated Memory", "Read Access Memory"],
+            "correctAnswer": "Random Access Memory"
+          },
+          {
+            "question": "Which of the following is an input device?",
+            "options": ["Printer", "Monitor", "Keyboard", "Speaker"],
+            "correctAnswer": "Keyboard"
+          }
+        ]
+      },
+      {
+        "name": "HTML Basics",
+        "totalQuestions": 3,
+        "passRate": 70,
+        "questions": [
+          {
+            "question": "What does HTML stand for?",
+            "options": ["Hyper Trainer Marking Language", "Hyper Text Marketing Language", "Hyper Text Markup Language", "Hyper Text Markup Leveler"],
+            "correctAnswer": "Hyper Text Markup Language"
+          },
+          {
+            "question": "Which HTML element is used to define a paragraph?",
+            "options": ["<head>", "<body>", "<p>", "<div>"],
+            "correctAnswer": "<p>"
+          },
+          {
+            "question": "Which doctype is correct for HTML5?",
+            "options": ["<!DOCTYPE HTML PUBLIC>", "<!DOCTYPE html>", "<!DOCTYPE>", "<!DOCTYPE html5>"],
+            "correctAnswer": "<!DOCTYPE html>"
+          }
+        ]
+      }
+    ]
+  }
+  
